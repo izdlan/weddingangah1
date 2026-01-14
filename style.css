@@ -1825,6 +1825,33 @@ body::before {
     }
 }
 
+.welcome-logo {
+    margin-bottom: 1.5rem;
+}
+
+.welcome-logo .logo-img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    animation: logoGlow 3s ease-in-out infinite;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+}
+
+@keyframes logoGlow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 50px rgba(255, 255, 255, 0.8), 0 0 80px rgba(240, 147, 251, 0.4);
+    }
+}
+
 .welcome-hearts {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
