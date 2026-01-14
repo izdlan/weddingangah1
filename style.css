@@ -1772,19 +1772,9 @@ body::before {
     overflow: hidden;
 }
 
-/* Dark overlay for better text readability */
+/* Dark overlay removed for clearer background */
 .welcome-overlay::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg,
-            rgba(0, 0, 0, 0.35) 0%,
-            rgba(45, 20, 30, 0.4) 50%,
-            rgba(0, 0, 0, 0.35) 100%);
-    z-index: 1;
+    display: none;
 }
 
 .welcome-overlay.hidden {
@@ -1805,7 +1795,7 @@ body::before {
 
 .welcome-content {
     text-align: center;
-    color: white;
+    color: #5a3d2b;
     padding: 3rem;
     max-width: 500px;
     position: relative;
@@ -1826,18 +1816,15 @@ body::before {
 }
 
 .welcome-logo {
-    margin-bottom: 1.5rem;
+    margin-bottom: -20px;
 }
 
 .welcome-logo .logo-img {
-    width: 220px;
-    height: 220px;
+    width: 250px;
+    height: 250px;
     object-fit: contain;
     border-radius: 50%;
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
-    animation: logoGlow 3s ease-in-out infinite;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 10px;
+    mix-blend-mode: multiply;
 }
 
 @keyframes logoGlow {
@@ -1894,7 +1881,6 @@ body::before {
     font-size: 3.2rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     letter-spacing: 3px;
 }
 
@@ -1904,7 +1890,6 @@ body::before {
     margin-bottom: 1.2rem;
     opacity: 0.95;
     letter-spacing: 2px;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .welcome-message {
