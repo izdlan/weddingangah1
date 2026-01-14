@@ -1,0 +1,1947 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-image: url('asset/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+/* Prevent scrolling when welcome overlay is visible */
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* Add overlay for better text readability */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.85);
+    z-index: -1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background-image: url('asset/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1s ease-out;
+}
+
+.names {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+}
+
+.wedding-date {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+}
+
+.wedding-location {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Countdown */
+.countdown {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.countdown-item {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    min-width: 100px;
+}
+
+.countdown-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.countdown-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    animation: bounce 2s infinite;
+}
+
+.scroll-indicator span {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    opacity: 1;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.scroll-arrow {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ffffff;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
+    margin: 0 auto;
+}
+
+/* Wedding Details Section */
+.wedding-details {
+    padding: 40px 0;
+    background: linear-gradient(135deg, #fff5f5 0%, #fff0f5 100%);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    clear: both;
+}
+
+.wedding-details::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 2px;
+}
+
+.wedding-details h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    display: inline-block;
+}
+
+
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.detail-card {
+    background: linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.6)), url('asset/weddingdetails.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 1.5rem 1rem;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(240, 147, 251, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.detail-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+}
+
+.detail-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(240, 147, 251, 0.25);
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #fff0f5 0%, #fff5f5 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #f5576c;
+    box-shadow: 0 5px 15px rgba(245, 87, 108, 0.15);
+    transition: all 0.3s ease;
+}
+
+.detail-card:hover .card-icon {
+    transform: scale(1.1) rotate(5deg);
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.detail-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.card-content {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.card-content p {
+    color: #666;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.card-content i {
+    color: #f5576c;
+    width: 20px;
+    padding-top: 5px;
+}
+
+.theme-text {
+    font-weight: 600;
+    color: #f5576c !important;
+    background: rgba(245, 87, 108, 0.05);
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    margin-top: auto;
+    flex-wrap: wrap;
+}
+
+.btn {
+    flex: 1;
+    padding: 12px 15px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 140px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(245, 87, 108, 0.4);
+}
+
+.btn-secondary {
+    background: white;
+    color: #f5576c;
+    border: 2px solid #f5576c;
+}
+
+.btn-secondary:hover {
+    background: rgba(245, 87, 108, 0.05);
+    transform: translateY(-2px);
+}
+
+/* Journey Section */
+.journey-section {
+    padding: 100px 0;
+    background: linear-gradient(180deg, #fff0f5 0%, #f8f9fa 100%);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.journey-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 3px;
+    background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 2px;
+}
+
+.journey-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 5rem;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+}
+
+.journey-timeline {
+    display: flex;
+    gap: 0;
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Center Line */
+.journey-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 60px;
+    bottom: 60px;
+    width: 4px;
+    background: linear-gradient(180deg, #f093fb 0%, #f5576c 50%, #f093fb 100%);
+    transform: translateX(-50%);
+    border-radius: 4px;
+    box-shadow: 0 0 15px rgba(240, 147, 251, 0.4);
+}
+
+.journey-column {
+    flex: 1;
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+.journey-column h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+.his-journey {
+    padding-right: 50px;
+    text-align: right;
+}
+
+.her-journey {
+    padding-left: 50px;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+}
+
+.timeline-item {
+    margin-bottom: 3rem;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Elegant flowing connectors from center line to story cards */
+.his-journey .timeline-item::after {
+    content: '';
+    position: absolute;
+    right: -50px;
+    top: 18px;
+    width: 70px;
+    height: 30px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 70 30'%3E%3Cpath d='M70 15 C50 15, 35 5, 8 15' stroke='%23f093fb' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='4' cy='15' r='4' fill='%23f093fb'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 1;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.her-journey .timeline-item::after {
+    content: '';
+    position: absolute;
+    left: -50px;
+    top: 18px;
+    width: 70px;
+    height: 30px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 70 30'%3E%3Cpath d='M0 15 C20 15, 35 5, 62 15' stroke='%23f5576c' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='66' cy='15' r='4' fill='%23f5576c'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 1;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover::after {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.timeline-content {
+    background: linear-gradient(135deg, #ffffff 0%, #fff5f5 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(240, 147, 251, 0.1);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+}
+
+.timeline-content:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(240, 147, 251, 0.2);
+    border-color: rgba(240, 147, 251, 0.3);
+}
+
+.his-journey .timeline-content {
+    margin-right: 2rem;
+}
+
+.her-journey .timeline-content {
+    margin-left: 2rem;
+}
+
+.journey-image {
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.journey-image::after {
+    content: '💖';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.journey-image:hover::after {
+    opacity: 1;
+}
+
+.journey-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.journey-image:hover img {
+    transform: scale(1.05);
+}
+
+.journey-text h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    color: #333;
+    font-weight: 600;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.journey-text p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.journey-text p::before {
+    content: '💝 ';
+    font-size: 0.8rem;
+}
+
+/* Our Story Together Section */
+.journey-together {
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.journey-together h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+.together-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.together-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #f093fb 0%, #f5576c 100%);
+    transform: translateX(-50%);
+    border-radius: 4px;
+}
+
+.together-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.together-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.together-content {
+    background: linear-gradient(135deg, #ffffff 0%, #fff5f5 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(240, 147, 251, 0.15);
+    transition: all 0.4s ease;
+    border: 2px solid rgba(240, 147, 251, 0.2);
+}
+
+.together-content:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(240, 147, 251, 0.25);
+    border-color: rgba(240, 147, 251, 0.4);
+}
+
+/* Footer */
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    position: relative;
+    z-index: 1;
+}
+
+.footer p {
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        padding: 0 20px;
+        justify-content: center;
+        min-height: 100vh;
+    }
+
+    .hero-content {
+        padding: 20px;
+    }
+
+    .names {
+        font-size: 2.8rem;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .wedding-date {
+        font-size: 1.4rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .wedding-location {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    .countdown {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        justify-content: center;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .countdown-item {
+        min-width: 70px;
+        padding: 1rem 0.8rem;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .countdown-number {
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+
+    .countdown-label {
+        font-size: 0.75rem;
+        letter-spacing: 0.5px;
+    }
+
+    .scroll-indicator {
+        bottom: 20px;
+    }
+
+    .scroll-indicator span {
+        font-size: 0.8rem;
+    }
+
+    .scroll-arrow {
+        width: 25px;
+        height: 25px;
+    }
+
+    /* Wedding Details Mobile */
+    .wedding-details {
+        padding: 60px 20px;
+    }
+
+    .wedding-details h2 {
+        font-size: 2.2rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .detail-card {
+        padding: 2rem 1.5rem;
+        border-radius: 20px;
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        border: 1px solid rgba(102, 126, 234, 0.1);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+    }
+
+    .detail-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(102, 126, 234, 0.2);
+    }
+
+    .detail-card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .detail-card p {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 0.3rem;
+    }
+
+    /* Journey Section Mobile */
+    .journey-section {
+        padding: 60px 15px;
+        background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+    }
+
+    .journey-title {
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-align: center;
+    }
+
+    .journey-timeline {
+        flex-direction: row;
+        gap: 1rem;
+        position: relative;
+    }
+
+    .journey-timeline::before {
+        left: 50%;
+        width: 2px;
+        background: linear-gradient(180deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+        height: 100%;
+        position: absolute;
+        top: 0;
+        transform: translateX(-50%);
+    }
+
+    .journey-column {
+        flex: 1;
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 0;
+        width: 48%;
+    }
+
+    .journey-column h3 {
+        font-size: 1.2rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 600;
+    }
+
+    .his-journey {
+        padding-right: 0.5rem;
+    }
+
+    .her-journey {
+        padding-left: 0.5rem;
+    }
+
+    .timeline-item {
+        margin-bottom: 1.5rem;
+        padding-left: 0;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease;
+    }
+
+    .timeline-item.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .his-journey .timeline-item::before {
+        right: -8px;
+        left: auto;
+        width: 12px;
+        height: 12px;
+        background: white;
+        border: 2px solid #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        position: absolute;
+        z-index: 2;
+    }
+
+    .her-journey .timeline-item::before {
+        left: -8px;
+        right: auto;
+        width: 12px;
+        height: 12px;
+        background: white;
+        border: 2px solid #764ba2;
+        box-shadow: 0 0 0 3px rgba(118, 75, 162, 0.1);
+        position: absolute;
+        z-index: 2;
+    }
+
+    .timeline-content {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 1rem;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        border: 1px solid rgba(102, 126, 234, 0.1);
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .timeline-content:hover {
+        transform: translateY(-2px) scale(1.01);
+        box-shadow: 0 5px 20px rgba(102, 126, 234, 0.15);
+        border-color: rgba(102, 126, 234, 0.2);
+    }
+
+    .journey-image {
+        margin-bottom: 0.6rem;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .journey-image img {
+        height: 100px;
+        width: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .journey-image:hover img {
+        transform: scale(1.05);
+    }
+
+    .journey-text h4 {
+        font-size: 0.85rem;
+        margin-bottom: 0.4rem;
+        color: #333;
+        font-weight: 600;
+        line-height: 1.3;
+    }
+
+    .journey-text p {
+        font-size: 0.75rem;
+        line-height: 1.5;
+        color: #666;
+        margin: 0;
+    }
+
+    /* Footer Mobile */
+    .footer {
+        padding: 2rem 20px;
+        background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    }
+
+    .footer p {
+        font-size: 0.9rem;
+        opacity: 0.9;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 0 15px;
+    }
+
+    .hero-content {
+        padding: 15px;
+    }
+
+    .names {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .wedding-date {
+        font-size: 1.2rem;
+    }
+
+    .wedding-location {
+        font-size: 1rem;
+    }
+
+    .countdown {
+        max-width: 280px;
+        gap: 0.8rem;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .countdown-item {
+        min-width: 60px;
+        padding: 0.8rem 0.6rem;
+    }
+
+    .countdown-number {
+        font-size: 1.6rem;
+    }
+
+    .countdown-label {
+        font-size: 0.7rem;
+    }
+
+    .wedding-details {
+        padding: 50px 15px;
+    }
+
+    .wedding-details h2 {
+        font-size: 1.8rem;
+    }
+
+    .detail-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .detail-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .detail-card p {
+        font-size: 0.9rem;
+    }
+
+    .journey-section {
+        padding: 40px 15px;
+    }
+
+    .journey-title {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+    }
+
+    .journey-timeline {
+        gap: 0.5rem;
+    }
+
+    .journey-column h3 {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .his-journey {
+        padding-right: 0.3rem;
+    }
+
+    .her-journey {
+        padding-left: 0.3rem;
+    }
+
+    .timeline-item {
+        margin-bottom: 1.2rem;
+    }
+
+    .his-journey .timeline-item::before,
+    .her-journey .timeline-item::before {
+        width: 10px;
+        height: 10px;
+    }
+
+    .his-journey .timeline-item::before {
+        right: -6px;
+    }
+
+    .her-journey .timeline-item::before {
+        left: -6px;
+    }
+
+    .timeline-content {
+        padding: 0.8rem;
+        border-radius: 10px;
+    }
+
+    .journey-image img {
+        height: 80px;
+    }
+
+    .journey-text h4 {
+        font-size: 0.75rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .journey-text p {
+        font-size: 0.7rem;
+        line-height: 1.4;
+    }
+
+    .footer {
+        padding: 1.5rem 15px;
+    }
+
+    .footer p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Mobile-specific enhancements */
+@media (max-width: 768px) {
+
+    /* Better touch targets */
+    .timeline-content {
+        cursor: pointer;
+    }
+
+    /* Improved typography for mobile */
+    body {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    /* Better spacing for mobile */
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Enhanced visual hierarchy */
+    .journey-column:first-child {
+        margin-top: 1rem;
+    }
+
+    /* Better image loading for mobile */
+    .journey-image img {
+        object-position: center;
+        object-fit: cover;
+    }
+
+    /* Improved animations for mobile */
+    .timeline-item.visible {
+        animation: slideInLeft 0.6s ease-out;
+    }
+
+    @keyframes slideInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /* Better scrollbar for mobile */
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #667eea;
+        border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #764ba2;
+        border-radius: 3px;
+    }
+}
+
+/* ===========================================
+   MUSIC PLAYER WIDGET STYLES
+   =========================================== */
+
+.music-player {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Minimized Player View */
+.player-mini {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 15px;
+    background: linear-gradient(135deg, rgba(20, 30, 48, 0.95) 0%, rgba(36, 59, 85, 0.95) 100%);
+    backdrop-filter: blur(20px);
+    border-radius: 50px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(0, 245, 212, 0.1);
+    border: 1px solid rgba(0, 245, 212, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    max-width: 280px;
+}
+
+.player-mini:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(0, 245, 212, 0.2);
+}
+
+.mini-album-art {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(0, 245, 212, 0.5);
+    box-shadow: 0 0 15px rgba(0, 245, 212, 0.3);
+}
+
+.mini-album-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mini-info {
+    flex: 1;
+    overflow: hidden;
+}
+
+.mini-title {
+    display: block;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mini-artist {
+    display: block;
+    color: rgba(0, 245, 212, 0.8);
+    font-size: 0.75rem;
+}
+
+.mini-play-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00f5d4 0%, #00b4d8 100%);
+    border: none;
+    color: #0a0f1a;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.mini-play-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 245, 212, 0.5);
+}
+
+/* Expanded Player View */
+.player-expanded {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 320px;
+    padding: 25px;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.98) 100%);
+    backdrop-filter: blur(30px);
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(0, 245, 212, 0.1);
+    border: 1px solid rgba(0, 245, 212, 0.15);
+}
+
+.player-expanded.active {
+    display: flex;
+    animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.player-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.now-playing-label {
+    color: #00f5d4;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.audio-source {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.7rem;
+    margin-top: 2px;
+}
+
+.player-close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.player-close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Album Art Container with Glow Ring */
+.album-art-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 25px;
+}
+
+.album-art-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, rgba(0, 245, 212, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(20px);
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+.album-art-ring {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    padding: 8px;
+    background: linear-gradient(135deg, #00f5d4, #00b4d8, #9b5de5, #f15bb5, #00f5d4);
+    background-size: 400% 400%;
+    animation: gradientRotate 6s ease infinite;
+    box-shadow: 0 0 30px rgba(0, 245, 212, 0.3),
+        inset 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes gradientRotate {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.album-art-ring::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    border-radius: 50%;
+    background: #0f172a;
+    z-index: 0;
+}
+
+.album-art {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.music-player.playing .album-art {
+    animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Song Info */
+.song-info {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.song-title {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0 0 5px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.song-artist {
+    color: #00f5d4;
+    font-size: 0.9rem;
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* Progress Bar */
+.progress-container {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: linear-gradient(to right, #a855f7 0%, #a855f7 var(--progress, 0%), rgba(255, 255, 255, 0.2) var(--progress, 0%), rgba(255, 255, 255, 0.2) 100%);
+    cursor: pointer;
+    outline: none;
+}
+
+.progress-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #00f5d4;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 245, 212, 0.5);
+    transition: all 0.2s ease;
+}
+
+.progress-bar::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.time-display {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.75rem;
+}
+
+/* Player Controls */
+.player-controls {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.control-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.control-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.play-btn {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00f5d4 0%, #00b4d8 100%);
+    border: none;
+    color: #0a0f1a;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 1.4rem;
+    box-shadow: 0 5px 25px rgba(0, 245, 212, 0.4);
+}
+
+.play-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 35px rgba(0, 245, 212, 0.6);
+}
+
+/* Volume Container */
+.volume-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 0 10px;
+    margin-bottom: 15px;
+}
+
+.volume-icon {
+    color: #00f5d4;
+    font-size: 1rem;
+}
+
+.volume-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    flex: 1;
+    height: 5px;
+    border-radius: 3px;
+    background: linear-gradient(to right, #00f5d4 0%, #00f5d4 var(--volume, 50%), rgba(255, 255, 255, 0.2) var(--volume, 50%), rgba(255, 255, 255, 0.2) 100%);
+    cursor: pointer;
+    outline: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #00f5d4;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(0, 245, 212, 0.5);
+}
+
+/* Playlist Toggle */
+.playlist-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    width: 100%;
+    justify-content: center;
+}
+
+.playlist-toggle:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #00f5d4;
+}
+
+.playlist-toggle i {
+    font-size: 0.9rem;
+}
+
+/* Playlist */
+.playlist {
+    display: none;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 15px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+
+.playlist.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.playlist-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.playlist-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.playlist-item.active {
+    background: rgba(0, 245, 212, 0.15);
+}
+
+.playlist-item-art {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.playlist-item-info {
+    flex: 1;
+    overflow: hidden;
+}
+
+.playlist-item-title {
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.playlist-item-artist {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.75rem;
+}
+
+.playlist-item-play {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid rgba(0, 245, 212, 0.5);
+    color: #00f5d4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.playlist-item:hover .playlist-item-play {
+    opacity: 1;
+}
+
+.playlist-item.active .playlist-item-play {
+    background: #00f5d4;
+    color: #0a0f1a;
+    opacity: 1;
+}
+
+/* Playlist Scrollbar */
+.playlist::-webkit-scrollbar {
+    width: 5px;
+}
+
+.playlist::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+}
+
+.playlist::-webkit-scrollbar-thumb {
+    background: rgba(0, 245, 212, 0.3);
+    border-radius: 3px;
+}
+
+/* Hide mini player when expanded is active */
+.music-player.expanded .player-mini {
+    display: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    .music-player {
+        bottom: 10px;
+        right: 10px;
+        left: 10px;
+    }
+
+    .player-mini {
+        max-width: none;
+    }
+
+    .player-expanded {
+        width: 100%;
+        max-width: none;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 30px 30px 0 0;
+        position: fixed;
+    }
+
+    .album-art-container {
+        width: 160px;
+        height: 160px;
+    }
+
+    .album-art-ring {
+        width: 160px;
+        height: 160px;
+    }
+
+    .album-art-glow {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+/* ================================
+   WELCOME OVERLAY STYLES
+   ================================ */
+.welcome-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('asset/backgroundlockscreen.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: overlayFadeIn 0.8s ease;
+    overflow: hidden;
+}
+
+/* Dark overlay for better text readability */
+.welcome-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+            rgba(0, 0, 0, 0.35) 0%,
+            rgba(45, 20, 30, 0.4) 50%,
+            rgba(0, 0, 0, 0.35) 100%);
+    z-index: 1;
+}
+
+.welcome-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.8s ease;
+}
+
+@keyframes overlayFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.welcome-content {
+    text-align: center;
+    color: white;
+    padding: 3rem;
+    max-width: 500px;
+    position: relative;
+    z-index: 10;
+    animation: contentSlideUp 1s ease 0.3s both;
+}
+
+@keyframes contentSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.welcome-hearts {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.welcome-hearts i {
+    animation: heartFloat 3s ease-in-out infinite;
+    color: #fff;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6));
+}
+
+.welcome-hearts i:nth-child(2) {
+    animation-delay: 0.4s;
+    font-size: 2.2rem;
+    color: #fff;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8));
+}
+
+.welcome-hearts i:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+@keyframes heartFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-8px) scale(1.1);
+    }
+}
+
+.welcome-names {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    letter-spacing: 3px;
+}
+
+.welcome-date {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 1.2rem;
+    opacity: 0.95;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-message {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    line-height: 1.7;
+    font-style: italic;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.enter-btn {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    border: none;
+    padding: 18px 55px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+    animation: btnPulse 2.5s ease-in-out infinite;
+}
+
+.enter-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(245, 87, 108, 0.5);
+}
+
+@keyframes btnPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4), 0 0 0 15px rgba(240, 147, 251, 0.1);
+    }
+}
+
+/* Mobile responsive for welcome overlay */
+@media (max-width: 480px) {
+    .welcome-content {
+        padding: 2rem 1.5rem;
+        margin: 1rem;
+    }
+
+    .welcome-names {
+        font-size: 2.3rem;
+        letter-spacing: 2px;
+    }
+
+    .welcome-date {
+        font-size: 1.1rem;
+    }
+
+    .welcome-message {
+        font-size: 0.95rem;
+    }
+
+    .enter-btn {
+        padding: 16px 40px;
+        font-size: 1.05rem;
+    }
+}
